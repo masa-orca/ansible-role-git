@@ -23,7 +23,7 @@
 
     - name: Update cache
       become: true
-      ansible.builtin.yum:
+      ansible.builtin.dnf:
         update_cache: true
       when:
-        - ansible_facts.distribution == "CentOS"
+        - ansible_facts.distribution == "AlmaLinux"

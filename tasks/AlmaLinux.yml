@@ -1,0 +1,7 @@
+---
+- name: Install git-all
+  become: true
+  ansible.builtin.dnf:
+    name: git-all
+    state: latest
+    update_cache: true

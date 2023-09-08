@@ -3,14 +3,20 @@
   become: true
   ansible.builtin.setup:
 
-- name: Install fish on Debian
+- name: Install git on Debian
   ansible.builtin.include_tasks:
     file: Debian.yml
   when:
     - ansible_facts.distribution == "Debian"
 
-- name: Install fish on Ubuntu
+- name: Install git on Ubuntu
   ansible.builtin.include_tasks:
     file: Ubuntu.yml
   when:
     - ansible_facts.distribution == "Ubuntu"
+
+- name: Install git on AlmaLinux
+  ansible.builtin.include_tasks:
+    file: AlmaLinux.yml
+  when:
+    - ansible_facts.distribution == "AlmaLinux"
