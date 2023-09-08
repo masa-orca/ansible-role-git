@@ -12,10 +12,10 @@ platforms:
     image: ubuntu:focal
   - name: ubuntu_jammy
     image: ubuntu:jammy
-  - name: debian_buster
-    image: debian:buster
   - name: debian_bullseye
     image: debian:bullseye
+  - name: debian_bookworm
+    image: debian:bookworm
 provisioner:
   name: ansible
   playbooks:
