@@ -4,7 +4,3 @@
   remote_user: root
   roles:
     - masa_orca.git
-  tasks:
-    - command: git --version
-      register: git_version
-    - debug: var=git_version
