@@ -1,0 +1,16 @@
+---
+- name: Collect facts
+  become: true
+  ansible.builtin.setup:
+
+- name: Install fish on Debian
+  ansible.builtin.include_tasks:
+    file: Debian.yml
+  when:
+    - ansible_facts.distribution == "Debian"
+
+- name: Install fish on Ubuntu
+  ansible.builtin.include_tasks:
+    file: Ubuntu.yml
+  when:
+    - ansible_facts.distribution == "Ubuntu"

@@ -1,0 +1,7 @@
+---
+- name: Install git-all
+  become: yes
+  ansible.builtin.apt:
+    name: git-all
+    state: latest
+    update_cache: yes

@@ -1,0 +1,24 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: almalinux8
+    image: almalinux:8
+  - name: almalinux9
+    image: almalinux:9
+  - name: ubuntu_focal
+    image: ubuntu:focal
+  - name: ubuntu_jammy
+    image: ubuntu:jammy
+  - name: debian_buster
+    image: debian:buster
+  - name: debian_bullseye
+    image: debian:bullseye
+provisioner:
+  name: ansible
+  playbooks:
+    prepare: ../playbooks/prepare.yml
+verifier:
+  name: ansible
