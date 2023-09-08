@@ -4,10 +4,6 @@ dependency:
 driver:
   name: docker
 platforms:
-  - name: almalinux8
-    image: almalinux:8
-  - name: almalinux9
-    image: almalinux:9
   - name: ubuntu_focal
     image: ubuntu:focal
   - name: ubuntu_jammy

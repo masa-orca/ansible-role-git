@@ -1,7 +1,22 @@
 ---
-- name: Install git-all
+- name: Run apt update
+  become: true
+  ansible.builtin.apt:
+    name: gnupg
+    update_cache: true
+
+- name: Add git-core stable repository from PPA and install its signing key on Ubuntu target
+  become: true
+  ansible.builtin.apt_repository:
+    repo: ppa:git-core/ppa
+
+- name: Run apt update
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install git
   become: yes
   ansible.builtin.apt:
-    name: git-all
+    name: git
     state: latest
-    update_cache: yes

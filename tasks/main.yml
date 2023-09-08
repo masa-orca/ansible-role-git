@@ -14,9 +14,3 @@
     file: Ubuntu.yml
   when:
     - ansible_facts.distribution == "Ubuntu"
-
-- name: Install git on AlmaLinux
-  ansible.builtin.include_tasks:
-    file: AlmaLinux.yml
-  when:
-    - ansible_facts.distribution == "AlmaLinux"
