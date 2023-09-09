@@ -15,10 +15,14 @@
         that:
           - "'git' in ansible_facts.packages"
 
-    - ansible.builtin.command: git config --system -l
+    - ansible.builtin.command: git config --system --list
       register: get_git_config_system
-    - debug: var=get_git_config_system
 
-    - ansible.builtin.command: git config --global -l
+    - ansible.builtin.command: git config --global --list
       register: get_git_config_global
-    - debug: var=get_git_config_global
+
+    - name: Check git configs
+      ansible.builtin.assert:
+        that:
+          - "'core.filemode=false' in get_git_config_system.stdout_lines"
+          - "'core.gitproxy=ssh' in get_git_config_global.stdout_lines"
