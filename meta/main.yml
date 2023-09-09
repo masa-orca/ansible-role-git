@@ -17,10 +17,6 @@ galaxy_info:
         - name: Ubuntu
           versions:
               - all
-        - name: EL
-          versions:
-              - 8
-              - 9
     galaxy_tags:
         - shell
         - fish
@@ -29,4 +25,4 @@ galaxy_info:
     issues: https://github.com/masa-orca/ansible-role-git/issues
 
 dependencies:
-    "community.general": "*"
+    - "community.general": "*"
