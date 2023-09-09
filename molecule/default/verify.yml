@@ -15,7 +15,7 @@
         that:
           - "'git' in ansible_facts.packages"
 
-    - command: git config --gloval -l
+    - command: git config --global -l
       register: git_version
     - debug: var=git_version
 
