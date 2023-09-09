@@ -19,10 +19,11 @@ provisioner:
   inventory:
     group_vars:
       all:
-        git_config_global_values:
+        git_config_system_values:
           - section: core
             option: filemode
             value: "false"
+        git_config_global_values:
           - section: core
             option: gitProxy
             value: ssh

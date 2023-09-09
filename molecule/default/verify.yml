@@ -5,11 +5,7 @@
   hosts: all
   gather_facts: false
   tasks:
-    - command: git --version
-      register: git_version
-    - debug: var=git_version
-
-    - command: cat ~/.gitconfig
+    - command: git config --list
       register: git_version
     - debug: var=git_version
 
