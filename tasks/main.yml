@@ -25,7 +25,7 @@
     mode: '0644'
     state: present
   loop: "{{ git_config_system_values }}"
-  when: git_config_system_values | length > 1
+  when: git_config_system_values | length >= 1
 
 - name: Setup global git config
   community.general.ini_file:
@@ -36,4 +36,4 @@
     mode: '0644'
     state: present
   loop: "{{ git_config_global_values }}"
-  when: git_config_global_values | length > 1
+  when: git_config_global_values | length >= 1
