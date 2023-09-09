@@ -14,7 +14,7 @@ platforms:
     image: debian:bookworm
 provisioner:
   name: ansible
-  playbooks:
-    prepare: ../playbooks/prepare.yml
 verifier:
   name: ansible
+options:
+  requirements-file: collections.yml
