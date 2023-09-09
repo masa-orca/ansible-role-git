@@ -25,4 +25,4 @@ galaxy_info:
     issues: https://github.com/masa-orca/ansible-role-git/issues
 
 dependencies:
-    - "community.general": "*"
+    - community.general: "*"
