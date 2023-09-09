@@ -15,12 +15,25 @@
   when:
     - ansible_facts.distribution == "Ubuntu"
 
-# - name: Setup system git config
-#   community.general.ini_file:
-#     path: /etc/conf
-#     section: drinks
-#     option: beverage
-#     value: lemon juice
-#     mode: '0600'
-#     state: present
-#   when: git_config_system_values | length > 1
+- name: Setup system git config
+  become: true
+  community.general.ini_file:
+    path: "{{ git_config_system_path }}"
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    mode: '0644'
+    state: present
+  loop: "{{ git_config_system_values }}"
+  when: git_config_system_values | length > 1
+
+- name: Setup global git config
+  community.general.ini_file:
+    path: "{{ git_config_global_path }}"
+    section: "{{ item.section }}"
+    option: "{{ item.option }}"
+    value: "{{ item.value }}"
+    mode: '0644'
+    state: present
+  loop: "{{ git_config_global_values }}"
+  when: git_config_global_values | length > 1

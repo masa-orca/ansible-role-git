@@ -9,10 +9,7 @@
       register: git_version
     - debug: var=git_version
 
-    - command: ls -la ~/
+    - command: cat ~/.gitconfig
       register: git_version
     - debug: var=git_version
 
-    - command: ls /etc
-      register: git_version
-    - debug: var=git_version

@@ -16,6 +16,16 @@ platforms:
     image: debian:bookworm
 provisioner:
   name: ansible
+  inventory:
+    group_vars:
+      all:
+        git_config_global_values:
+          - section: core
+            option: filemode
+            value: "false"
+          - section: core
+            option: gitProxy
+            value: ssh
 verifier:
   name: ansible
 
