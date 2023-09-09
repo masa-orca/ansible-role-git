@@ -5,7 +5,17 @@
   hosts: all
   gather_facts: false
   tasks:
-    - command: git config --list
+    - name: Gather the package facts
+      become: true
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Check that git package installed
+      ansible.builtin.assert:
+        that:
+          - "'git' in ansible_facts.packages"
+
+    - command: git config --global --list
       register: git_version
     - debug: var=git_version
 
