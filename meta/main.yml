@@ -28,4 +28,5 @@ galaxy_info:
     homepage: https://github.com/masa-orca/ansible-role-git
     issues: https://github.com/masa-orca/ansible-role-git/issues
 
-dependencies: []
+dependencies:
+    "community.general": "*"

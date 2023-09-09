@@ -1,0 +1,5 @@
+---
+git_config_system_path: "/etc/gitconfig"
+git_config_system_values: []
+git_config_grobal_path: "~/.gitconfig"
+git_config_grobal_values: []

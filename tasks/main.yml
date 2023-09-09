@@ -14,3 +14,13 @@
     file: Ubuntu.yml
   when:
     - ansible_facts.distribution == "Ubuntu"
+
+# - name: Setup system git config
+#   community.general.ini_file:
+#     path: /etc/conf
+#     section: drinks
+#     option: beverage
+#     value: lemon juice
+#     mode: '0600'
+#     state: present
+#   when: git_config_system_values | length > 1

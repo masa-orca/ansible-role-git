@@ -8,3 +8,11 @@
     - command: git --version
       register: git_version
     - debug: var=git_version
+
+    - command: ls -la ~/
+      register: git_version
+    - debug: var=git_version
+
+    - command: ls /etc
+      register: git_version
+    - debug: var=git_version
