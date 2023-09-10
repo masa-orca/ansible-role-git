@@ -3,3 +3,5 @@ git_config_system_path: "/etc/gitconfig"
 git_config_system_values: []
 git_config_global_path: "~/.gitconfig"
 git_config_global_values: []
+git_template_src_dir: ""
+git_template_dest_dir: ""

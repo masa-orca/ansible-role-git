@@ -39,3 +39,11 @@
     state: present
   loop: "{{ git_config_global_values }}"
   when: git_config_global_values | length >= 1
+
+- name: Copy git template directory
+  ansible.builtin.copy:
+    src: "{{ git_template_src_dir }}"
+    dest: "{{ git_template_dest_dir }}"
+  when:
+    - git_template_src_dir | length >= 1
+    - git_template_dest_dir | length >= 1
