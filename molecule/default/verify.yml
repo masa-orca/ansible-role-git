@@ -17,9 +17,11 @@
 
     - ansible.builtin.command: git config --system --list
       register: get_git_config_system
+      changed_when: false
 
     - ansible.builtin.command: git config --global --list
       register: get_git_config_global
+      changed_when: false
 
     - name: Check git configs
       ansible.builtin.assert:
